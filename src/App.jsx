@@ -29,7 +29,7 @@ class App extends React.Component {
   createParticles = () => {
     const points = createGeometry(0xffffff, 0.5, 2000);
     const start = init(points, { z: 50, y: 30, x: 35 });
-    const viewer = document.getElementById('viewer');
+    const { viewer } = this.refs;
     viewer.appendChild(start.renderer.domElement);
     const { renderer, scene, camera } = start;
     this.setState({
@@ -45,7 +45,7 @@ class App extends React.Component {
     const cylinder = createCylinder(0xffffff);
     const sphere = createSphere(0xffffff);
     const start = initLinePoints({ cylinder, sphere }, { z: 15 });
-    const viewer = document.getElementById('viewer');
+    const { viewer } = this.refs;
     viewer.appendChild(start.renderer.domElement);
     const { renderer, scene, camera } = start;
     this.setState({
